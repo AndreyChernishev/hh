@@ -1,0 +1,526 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1718950449033-1
+      author: A (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 1
+            sequenceName: id_klyuchevoy_navik
+            startValue: 1
+  - changeSet:
+      id: 1718950449033-2
+      author: A (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 1
+            sequenceName: id_obrazovanie
+            startValue: 1
+  - changeSet:
+      id: 1718950449033-3
+      author: A (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 1
+            sequenceName: id_opit_raboti
+            startValue: 1
+  - changeSet:
+      id: 1718950449033-4
+      author: A (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 1
+            sequenceName: id_organizaciya
+            startValue: 1
+  - changeSet:
+      id: 1718950449033-5
+      author: A (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 1
+            sequenceName: id_rezume
+            startValue: 1
+  - changeSet:
+      id: 1718950449033-6
+      author: A (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 1
+            sequenceName: id_soiskatel
+            startValue: 1
+  - changeSet:
+      id: 1718950449033-7
+      author: A (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 1
+            sequenceName: id_vakansiya
+            startValue: 1
+  - changeSet:
+      id: 1718950449033-8
+      author: A (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 1
+            sequenceName: user_id_seq
+            startValue: 1
+  - changeSet:
+      id: 1718950449033-9
+      author: A (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 1
+            sequenceName: user_role_id_seq
+            startValue: 1
+  - changeSet:
+      id: 1718950449033-10
+      author: A (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_klyuchevoy_navik
+                  name: id_kluchevoy_navik
+                  type: BIGINT
+              - column:
+                  name: nazvanie
+                  type: VARCHAR(255)
+            tableName: klyuchevoy_navik
+  - changeSet:
+      id: 1718950449033-11
+      author: A (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_obrazovanie
+                  name: id_obrazovanie
+                  type: BIGINT
+              - column:
+                  name: id_rezume
+                  type: BIGINT
+              - column:
+                  name: uroven
+                  type: VARCHAR(255)
+              - column:
+                  name: uchebnoe_zavedenie
+                  type: VARCHAR(255)
+              - column:
+                  name: fakultet
+                  type: VARCHAR(255)
+              - column:
+                  name: specializaciya
+                  type: VARCHAR(255)
+              - column:
+                  name: god_okonchaniya
+                  type: DATETIME
+            tableName: obrazovanie
+  - changeSet:
+      id: 1718950449033-12
+      author: A (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_opit_raboti
+                  name: id_opit_raboti
+                  type: BIGINT
+              - column:
+                  name: id_rezume
+                  type: BIGINT
+              - column:
+                  name: nachalo_raboti
+                  type: DATETIME
+              - column:
+                  name: okonchanie
+                  type: DATETIME
+              - column:
+                  name: organizaciya
+                  type: VARCHAR(255)
+              - column:
+                  name: region
+                  type: VARCHAR(255)
+              - column:
+                  name: sayt
+                  type: VARCHAR(255)
+              - column:
+                  name: sfera_deyatelnosti_kompanii
+                  type: VARCHAR(255)
+              - column:
+                  name: dolshnost
+                  type: VARCHAR(255)
+              - column:
+                  name: obyazannosti_na_rabochem_meste
+                  type: VARCHAR(255)
+            tableName: opit_raboti
+  - changeSet:
+      id: 1718950449033-13
+      author: A (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_organizaciya
+                  name: id_organizaciya
+                  type: BIGINT
+              - column:
+                  name: nazvanie
+                  type: VARCHAR(255)
+              - column:
+                  name: adres
+                  type: VARCHAR(255)
+              - column:
+                  name: telefon
+                  type: VARCHAR(255)
+              - column:
+                  name: schot
+                  type: INT
+              - column:
+                  name: parol
+                  type: VARCHAR(255)
+            tableName: organizaciya
+  - changeSet:
+      id: 1718950449033-14
+      author: A (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_rezume
+                  name: id_rezume
+                  type: BIGINT
+              - column:
+                  name: id_soiskatel
+                  type: BIGINT
+              - column:
+                  name: zagolovok
+                  type: VARCHAR(255)
+              - column:
+                  name: zarplata
+                  type: INT
+              - column:
+                  name: zanyatost
+                  type: VARCHAR(255)
+              - column:
+                  name: grafik_raboti
+                  type: VARCHAR(255)
+              - column:
+                  name: reyting_rezume
+                  type: INT
+              - column:
+                  name: kolichesto_prosmotrov
+                  type: INT
+            tableName: rezume
+  - changeSet:
+      id: 1718950449033-15
+      author: A (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_rezume_klyuchevoy_navik
+                  name: id_kluchevoy_navik
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_rezume_klyuchevoy_navik
+                  name: id_rezume
+                  type: BIGINT
+            tableName: rezume_klyuchevoy_navik
+  - changeSet:
+      id: 1718950449033-16
+      author: A (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_soiskatel
+                  name: id_soiskatel
+                  type: BIGINT
+              - column:
+                  name: familiya
+                  type: VARCHAR(255)
+              - column:
+                  name: imya
+                  type: VARCHAR(255)
+              - column:
+                  name: otchestvo
+                  type: VARCHAR(255)
+              - column:
+                  name: pol
+                  type: VARCHAR(255)
+              - column:
+                  name: data_roshdeniya
+                  type: DATETIME
+              - column:
+                  name: region
+                  type: VARCHAR(255)
+              - column:
+                  name: telefon
+                  type: VARCHAR(255)
+              - column:
+                  name: email
+                  type: VARCHAR(255)
+              - column:
+                  name: grazhdanstvo
+                  type: VARCHAR(255)
+              - column:
+                  name: rasreshenie_na_rabotu_strana
+                  type: VARCHAR(255)
+              - column:
+                  name: uroven_obrazovaniya
+                  type: VARCHAR(255)
+              - column:
+                  name: opit_raboti
+                  type: VARCHAR(255)
+              - column:
+                  name: parol
+                  type: VARCHAR(255)
+            tableName: soiskatel
+  - changeSet:
+      id: 1718950449033-17
+      author: A (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_user_roles
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: user_authority
+                  type: SMALLINT
+              - column:
+                  name: user_id
+                  type: BIGINT
+            tableName: user_roles
+  - changeSet:
+      id: 1718950449033-18
+      author: A (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_users
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: username
+                  type: VARCHAR(255)
+              - column:
+                  name: password
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: expired
+                  type: BOOLEAN
+              - column:
+                  constraints:
+                    nullable: false
+                  name: locked
+                  type: BOOLEAN
+              - column:
+                  constraints:
+                    nullable: false
+                  name: enabled
+                  type: BOOLEAN
+            tableName: users
+  - changeSet:
+      id: 1718950449033-19
+      author: A (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_vakanciya
+                  name: id_vakansiya
+                  type: BIGINT
+              - column:
+                  name: zagolovok
+                  type: VARCHAR(255)
+              - column:
+                  name: dolzhnost
+                  type: VARCHAR(255)
+              - column:
+                  name: oklad_min
+                  type: INT
+              - column:
+                  name: oklad_max
+                  type: INT
+              - column:
+                  name: opit_raboti_min
+                  type: INT
+              - column:
+                  name: opit_raboti_max
+                  type: INT
+              - column:
+                  name: zanyatost
+                  type: VARCHAR(255)
+              - column:
+                  name: vozrast_min
+                  type: INT
+              - column:
+                  name: vozrast_max
+                  type: INT
+              - column:
+                  name: pol
+                  type: VARCHAR(255)
+              - column:
+                  name: zadachi
+                  type: VARCHAR(255)
+              - column:
+                  name: trebovaniya
+                  type: VARCHAR(255)
+              - column:
+                  name: usloviya
+                  type: VARCHAR(255)
+              - column:
+                  name: kolichestvo_prosmotrov
+                  type: INT
+              - column:
+                  name: oplachena
+                  type: BOOLEAN
+              - column:
+                  name: id_organizaciya
+                  type: BIGINT
+            tableName: vakanciya
+  - changeSet:
+      id: 1718950449033-20
+      author: A (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_vakanciya_klyuchevoy_navik
+                  name: id_kluchevoy_navik
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_vakanciya_klyuchevoy_navik
+                  name: id_vakansiya
+                  type: BIGINT
+            tableName: vakanciya_klyuchevoy_navik
+  - changeSet:
+      id: 1718950449033-21
+      author: A (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: user_id
+            baseTableName: user_roles
+            constraintName: FK_USER_ROLES_ON_USER
+            referencedColumnNames: id
+            referencedTableName: users
+  - changeSet:
+      id: 1718950449033-22
+      author: A (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: id_organizaciya
+            baseTableName: vakanciya
+            constraintName: FK_VAKANCIYA_ON_ID_ORGANIZACIYA
+            referencedColumnNames: id_organizaciya
+            referencedTableName: organizaciya
+  - changeSet:
+      id: 1718950449033-23
+      author: A (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: id_kluchevoy_navik
+            baseTableName: rezume_klyuchevoy_navik
+            constraintName: fk_rezklynav_on_klyuchevoy_navik
+            referencedColumnNames: id_kluchevoy_navik
+            referencedTableName: klyuchevoy_navik
+  - changeSet:
+      id: 1718950449033-24
+      author: A (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: id_rezume
+            baseTableName: rezume_klyuchevoy_navik
+            constraintName: fk_rezklynav_on_rezume
+            referencedColumnNames: id_rezume
+            referencedTableName: rezume
+  - changeSet:
+      id: 1718950449033-25
+      author: A (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: id_kluchevoy_navik
+            baseTableName: vakanciya_klyuchevoy_navik
+            constraintName: fk_vakklynav_on_klyuchevoy_navik
+            referencedColumnNames: id_kluchevoy_navik
+            referencedTableName: klyuchevoy_navik
+  - changeSet:
+      id: 1718950449033-26
+      author: A (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: id_vakansiya
+            baseTableName: vakanciya_klyuchevoy_navik
+            constraintName: fk_vakklynav_on_vakanciya
+            referencedColumnNames: id_vakansiya
+            referencedTableName: vakanciya
+
